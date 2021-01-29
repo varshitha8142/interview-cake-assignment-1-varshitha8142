@@ -15,3 +15,13 @@ Don't make your users watch the same movie twice
 Optimize for runtime over memory. """
 
 # Start coding from here
+
+def flight(movie_lengths, flight_length):
+    movie_lengths = set(movie_lengths)
+    for first_movie_length in movie_lengths:
+        second_movie_length = flight_length - first_movie_length
+        if second_movie_length in movie_lengths:
+            return True
+        movie_lengths.add(first_movie_length)
+    return False
+flight([134,89,90,90,40,10],50 )
