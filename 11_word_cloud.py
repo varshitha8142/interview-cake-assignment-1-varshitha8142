@@ -20,3 +20,20 @@ You could make a reasonable argument to use regex in your solution.
 We won't, mainly because performance is difficult to measure and can get pretty bad.  """
 
 # Start coding from here
+import string
+def wordclouder(words):
+    caps = string.ascii_uppercase
+    lows = string.ascii_lowercase
+    punc = string.punctuation
+    tbl = str.maketrans(caps, lows, punc)
+    clean = words.translate(tbl)
+    warray = clean.split(' ')
+    wdict = {}
+    for w in warray:
+        try:
+            wdict[w] += 1
+        except KeyError:
+            wdict[w] = 1
+    return wdict
+solution = wordclouder('After beating the eggs, Dana read the next step: Add milk and eggs, then add flour and sugar.')
+print(solution)
