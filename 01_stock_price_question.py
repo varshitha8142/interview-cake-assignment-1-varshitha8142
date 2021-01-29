@@ -27,3 +27,29 @@ No "shorting"—you need to buy before you can sell. Also, you can't buy and
 sell in the same time step—at least 1 minute has to pass. """
 
 # Start coding from here
+'''def stockprice(lst):
+  s = l[1:]
+  c = 0
+  p = []
+  while c<=len(l)-1:
+    for i in range(len(s)):
+        p.append((l[c]-s[i]))
+    c = c+1
+  return max(p)
+l = [10,7,5,8,11,9] 
+print(stockprice(l))'''
+
+
+'''def stockprice(lst):
+    p=[]
+    for i in range(len(lst)):
+        for j in range(len(lst)-1):
+            p.append(lst[i]-lst[j])
+    return(max(p))       
+print(stockprice([10,7,5,8,11,9] ))'''
+
+def stockprice(lst):
+    p=[]
+    [p.append(lst[i]-lst[j]) for i in range(len(lst))for j in range(len(lst)-1)]
+    return(max(p))       
+print(stockprice([10,7,5,8,11,9]))
