@@ -1,4 +1,4 @@
-""" Find a duplicate
+''' Find a duplicate
 
 we are given a list of integers where:
 
@@ -31,10 +31,10 @@ A list [2, 3, 1, 3], so 2 is in the first position and points to 3 in the second
 position. Notice we're using "positions" and not "indices." 
 
 For this problem, we'll use the word "position" to mean something like "index," 
-but different: indices start at 0, while positions start at 1. 
+but different: indices start at 0, while positions start at 1. '''
 
 
-
+#code
 from __future__ import print_function
 import random
 import unittest
