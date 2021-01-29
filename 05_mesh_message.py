@@ -35,6 +35,41 @@ a list of other users nearby:
 }
 
 
+
+
+
+# Start coding from here
+def mesh(network,lst):
+    p = []
+    c = 0
+    t = 1
+    for i in network[lst[0]]:
+        for j in network[lst[1]]:
+            if (i==j):
+                p.append(i)
+    for i in range(len(p)):
+        if len(p)>1:
+            l.insert(1,p[c])
+            print(l)
+            c = c+1
+            l.pop(t)
+        elif len(p)==1:
+            l.insert(1,p[c])
+            return l
+
+n = {'Min'     : ['William', 'Jayden', 'Omar'],
+    'William' : ['Min', 'Noam'],
+    'Jayden'  : ['Min', 'Amelia', 'Ren', 'Noam'],
+    'Ren'     : ['Jayden', 'Omar'],
+    'Amelia'  : ['Jayden', 'Adam', 'Miguel'],
+    'Adam'    : ['Amelia', 'Miguel', 'Sofia', 'Lucas'],
+    'Miguel'  : ['Amelia', 'Adam', 'Liam', 'Nathan'],
+    'Noam'    : ['Nathan', 'Jayden', 'William'],
+    'Omar'    : ['Ren', 'Min', 'Scott']}
+l = ['Jayden','Adam']
+print(mesh(n,l))
+
+
 For the network above, a message from Jayden to Adam should have this route:
 
   ['Jayden', 'Amelia', 'Adam']   """
