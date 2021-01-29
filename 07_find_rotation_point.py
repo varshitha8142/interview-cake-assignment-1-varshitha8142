@@ -28,3 +28,22 @@ started working from the beginning of the dictionary. This list is huge
 To keep things simple, you can assume all words are lowercase.  """
 
 # Start coding from here
+def rotation(w):
+    t = sorted(w)
+    for i in range(len(w)):
+        if(w[i] == t[0]):
+            return i
+
+w = [
+    'ptolemaic',
+    'retrograde',
+    'supplant',
+    'undulate',
+    'xenoepist',
+    'asymptote',  # <-- rotates here!
+    'babka',
+    'banoffee',
+    'engender',
+    'karpatka',
+    'othellolagkage']
+print(rotation(w))
