@@ -27,3 +27,14 @@ going to change. Even if we do redesign the game a little, the scores will stay
 around the same order of magnitude. """
 
 # Start coding from here
+def sort_scores(unsorted_scores,highest_possible_score):
+    pass
+unsorted_scores= list(map(int,input("Enter a multiple value: ").split()))
+#unsorted_scores= [int(i) for i in input("Enter multiple value: ").split()]
+for i in unsorted_scores:
+    if (i<100):
+        print((i[::-1]),end=" ")
+        break
+        #s=sort_scores(unsorted_scores,100)
+    elif(i>100):
+        print(list(reversed(sorted(unsorted_scores))))
