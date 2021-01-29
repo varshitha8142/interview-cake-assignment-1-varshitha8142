@@ -19,3 +19,19 @@ by calculating:
 Here's the catch: You can't use division in your solution! """
 
 # Start coding from here
+def product(l):
+  if len(l) == 0:
+    print([])
+  if len(l) == 1:
+      print([1])
+  p = [1]*len(l)
+#print(p)
+  for i in range(len(l)):
+    for j in range(0,i):
+      p[j] = p[j]*l[i]
+        #print(p[j])
+    for j in range(i + 1, len(p)):
+        p[j] = p[j] * l[i]
+  return p
+l = [1,7,3,4]
+print(product(l))
