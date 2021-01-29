@@ -9,3 +9,9 @@ Given two eggs, find the highest floor an egg can be dropped from without breaki
 with as few drops as possible. """
 
 # Start coding from here
+import math
+def eggdrop(k):
+    return math.ceil((-1.0+math.sqrt(1+8*k))/2)
+
+k =1000
+print(eggdrop(k))
