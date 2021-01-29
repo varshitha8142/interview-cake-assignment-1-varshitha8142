@@ -33,6 +33,35 @@ position. Notice we're using "positions" and not "indices."
 For this problem, we'll use the word "position" to mean something like "index," 
 but different: indices start at 0, while positions start at 1. 
 
+
+
+from __future__ import print_function
+import random
+import unittest
+
+def find_duplicate(list):
+    n = len(list)
+    i = n
+    j = n
+    while True:
+        i = list[i - 1]  
+        j = list[j - 1]  
+        j = list[j - 1] 
+        if i == j:
+            break
+    j = n
+    while True:
+        i = list[i - 1]
+        j = list[j - 1]
+        if i == j:
+            break
+
+    print("duplicate is %s" % i)
+    return i
+
+list = [2, 3, 1, 3]
+find_duplicate(list)
+
 More rigorously: position = index + 1.
 
 Using this, find a duplicate integer in O(n) time while keeping our space cost at 
