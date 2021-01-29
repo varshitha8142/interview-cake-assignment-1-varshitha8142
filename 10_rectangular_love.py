@@ -30,3 +30,34 @@ They are defined as dictionaries like this:
 Your output rectangle should use this format as well.  """
 
 # Start coding from here
+def rectangular_intersection(rect1,rect2):
+  rect1_x_indicies=[v for v in range(rect1['left_x'],rect1['left_x']+rect1['width']+1)]
+  rect1_y_indicies=[v for v in range(rect1['bottom_y'],rect1['bottom_y']+rect1['height']+1)]
+  rect2_x_indicies=[v for v in range(rect2['left_x'],rect2['left_x']+rect2['width']+1)]
+  rect2_y_indicies=[v for v in range(rect2['bottom_y'],rect2['bottom_y']+rect2['height']+1)]
+  req_rect_x_indicies=list(set(rect1_x_indicies).intersection(rect2_x_indicies))
+  req_rect_y_indicies=list(set(rect1_y_indicies).intersection(rect2_y_indicies))
+  req_rect={'left_x':req_rect_x_indicies[0],
+            'bottom_y':req_rect_y_indicies[0],
+            'width':len(req_rect_x_indicies)-1,
+            'height':len(req_rect_y_indicies)-1}
+  return req_rect
+loverectangle1 = {
+
+    'left_x'   : 1,
+    'bottom_y' : 1,
+
+    'width'    : 6,
+    'height'   : 3,
+
+}
+loverectangle2 = {
+
+    'left_x'   : 6,
+    'bottom_y' : 2,
+
+    'width'    : 1,
+    'height'   : 3,
+
+}
+print(rectangular_intersection(loverectangle1,loverectangle2))
